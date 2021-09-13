@@ -1,0 +1,184 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>task1_1</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-10-27"><meta name="DC.source" content="Untitled1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>task1_1</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">&#37197;&#32622;&#29615;&#22659;</a></li><li><a href="#2">&#20135;&#29983;&#38543;&#26426;&#25968;</a></li><li><a href="#3">&#30011;&#32447;&#21644;&#30011;&#28857;</a></li><li><a href="#4">&#32479;&#35745;&#37327;</a></li><li><a href="#5">&#23545;&#27604;&#27714;&#21508;&#38454;&#30697;</a></li></ul></div><h2>&#37197;&#32622;&#29615;&#22659;<a name="1"></a></h2><pre class="codeinput">clear <span class="string">all</span>;
+close <span class="string">all</span>;
+clc;
+</pre><h2>&#20135;&#29983;&#38543;&#26426;&#25968;<a name="2"></a></h2><p>&#21442;&#25968;</p><pre class="codeinput">M=1048576;
+b=1;
+r=2045;
+first=12357;
+num=10000;
+s=randuniform(M,b,r,first,num);<span class="comment">%&#33258;&#32534;</span>
+y=rand(1,num);<span class="comment">%&#23545;&#29031;</span>
+</pre><h2>&#30011;&#32447;&#21644;&#30011;&#28857;<a name="3"></a></h2><p>&#30011;&#32447;</p><pre class="codeinput">figure,subplot(2,1,1),plot(s)  <span class="comment">%&#20840;&#37096;</span>
+title(<span class="string">'&#20840;&#37096;&#25968;&#25454;&#36830;&#32447;'</span>);
+subplot(2,1,2),plot(s(1:100)) <span class="comment">%&#21069;100&#20010;&#25968;&#25454;</span>
+title(<span class="string">'&#21069;100&#20010;&#25968;&#25454;&#36830;&#32447;'</span>);
+<span class="comment">% &#30011;&#28857;</span>
+figure,subplot(2,1,1),plot(s,<span class="string">'.'</span>)  <span class="comment">%&#20840;&#37096;</span>
+title(<span class="string">'&#20840;&#37096;&#25968;&#25454;&#30011;&#28857;'</span>);
+subplot(2,1,2),plot(s(1:100),<span class="string">'*'</span>) <span class="comment">%&#21069;100&#20010;&#25968;&#25454;</span>
+title(<span class="string">'&#21069;100&#20010;&#25968;&#25454;&#30011;&#28857;'</span>);
+</pre><img vspace="5" hspace="5" src="Untitled1_01.png" style="width:560px;height:420px;" alt=""> <img vspace="5" hspace="5" src="Untitled1_02.png" style="width:560px;height:420px;" alt=""> <h2>&#32479;&#35745;&#37327;<a name="4"></a></h2><pre class="codeinput"><span class="comment">%&#27714;&#21508;&#38454;&#30697;</span>
+n=zeros(1,4);
+<span class="keyword">for</span> i=1:10000
+    n(1)=n(1)+s(i);
+    n(2)=n(2)+s(i)^2;
+    n(3)=n(3)+s(i)^3;
+    n(4)=n(4)+s(i)^4;
+<span class="keyword">end</span>
+n=n/10000;
+disp([<span class="string">'&#33258;&#32534;&#38543;&#26426;&#25968;&#30340;&#21508;&#38454;&#30697;'</span>,num2str(n),<span class="string">'&#12290;'</span>]);
+</pre><pre class="codeoutput">&#33258;&#32534;&#38543;&#26426;&#25968;&#30340;&#21508;&#38454;&#30697;0.49724     0.33062     0.24762     0.19795&#12290;
+</pre><h2>&#23545;&#27604;&#27714;&#21508;&#38454;&#30697;<a name="5"></a></h2><pre class="codeinput">m=zeros(1,4);
+<span class="keyword">for</span> i=1:10000
+    m(1)=m(1)+y(i);
+    m(2)=m(2)+y(i)^2;
+    m(3)=m(3)+y(i)^3;
+    m(4)=m(4)+y(i)^4;
+<span class="keyword">end</span>
+m=m/10000;
+disp([<span class="string">'&#23545;&#29031;&#38543;&#26426;&#25968;&#30340;&#21508;&#38454;&#30697;'</span>,num2str(m),<span class="string">'&#12290;'</span>]);
+<span class="comment">%&#30452;&#26041;&#22270;</span>
+figure,subplot(2,1,1),hist(s);title(<span class="string">'&#33258;&#32534;&#38543;&#26426;&#25968;&#30340;&#20998;&#24067;'</span>);
+subplot(2,1,2),hist(s,100);
+title(<span class="string">'&#33258;&#32534;&#38543;&#26426;&#25968;&#30340;100&#20221;&#20998;&#24067;'</span>);
+figure,subplot(2,1,1),hist(y);title(<span class="string">'&#23545;&#29031;&#38543;&#26426;&#25968;&#30340;&#20998;&#24067;'</span>);
+subplot(2,1,2),hist(y,100);
+title(<span class="string">'&#23545;&#29031;&#38543;&#26426;&#25968;&#30340;100&#20221;&#20998;&#24067;'</span>);
+Max=max(s);disp([<span class="string">'&#33258;&#32534;&#26368;&#22823;&#20540;'</span>,num2str(Max),<span class="string">'&#12290;'</span>]);
+Min=min(s);disp([<span class="string">'&#33258;&#32534;&#26368;&#23567;&#20540;'</span>,num2str(Min),<span class="string">'&#12290;'</span>]);
+Max1=max(y);disp([<span class="string">'&#23545;&#29031;&#26368;&#22823;&#20540;'</span>,num2str(Max1),<span class="string">'&#12290;'</span>]);
+Min1=min(y);disp([<span class="string">'&#23545;&#29031;&#26368;&#23567;&#20540;'</span>,num2str(Min1),<span class="string">'&#12290;'</span>]);
+</pre><pre class="codeoutput">&#23545;&#29031;&#38543;&#26426;&#25968;&#30340;&#21508;&#38454;&#30697;0.49956     0.33246     0.24874     0.19847&#12290;
+&#33258;&#32534;&#26368;&#22823;&#20540;0.99986&#12290;
+&#33258;&#32534;&#26368;&#23567;&#20540;7.6294e-06&#12290;
+&#23545;&#29031;&#26368;&#22823;&#20540;0.99979&#12290;
+&#23545;&#29031;&#26368;&#23567;&#20540;7.0261e-05&#12290;
+</pre><img vspace="5" hspace="5" src="Untitled1_03.png" style="width:560px;height:420px;" alt=""> <img vspace="5" hspace="5" src="Untitled1_04.png" style="width:560px;height:420px;" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% task1_1
+%% 配置环境
+clear all;
+close all;
+clc;
+%% 产生随机数
+% 参数
+M=1048576;
+b=1;
+r=2045;
+first=12357;
+num=10000;
+s=randuniform(M,b,r,first,num);%自编
+y=rand(1,num);%对照
+%% 画线和画点
+% 画线
+figure,subplot(2,1,1),plot(s)  %全部
+title('全部数据连线');
+subplot(2,1,2),plot(s(1:100)) %前100个数据
+title('前100个数据连线');
+% 画点
+figure,subplot(2,1,1),plot(s,'.')  %全部
+title('全部数据画点');
+subplot(2,1,2),plot(s(1:100),'*') %前100个数据
+title('前100个数据画点');
+%% 统计量
+%求各阶矩
+n=zeros(1,4);
+for i=1:10000
+    n(1)=n(1)+s(i);
+    n(2)=n(2)+s(i)^2;
+    n(3)=n(3)+s(i)^3;
+    n(4)=n(4)+s(i)^4;
+end
+n=n/10000;
+disp(['自编随机数的各阶矩',num2str(n),'。']);
+%% 对比求各阶矩
+m=zeros(1,4);
+for i=1:10000
+    m(1)=m(1)+y(i);
+    m(2)=m(2)+y(i)^2;
+    m(3)=m(3)+y(i)^3;
+    m(4)=m(4)+y(i)^4;
+end
+m=m/10000;
+disp(['对照随机数的各阶矩',num2str(m),'。']);
+%直方图
+figure,subplot(2,1,1),hist(s);title('自编随机数的分布');
+subplot(2,1,2),hist(s,100);
+title('自编随机数的100份分布');
+figure,subplot(2,1,1),hist(y);title('对照随机数的分布');
+subplot(2,1,2),hist(y,100);
+title('对照随机数的100份分布');
+Max=max(s);disp(['自编最大值',num2str(Max),'。']);
+Min=min(s);disp(['自编最小值',num2str(Min),'。']);
+Max1=max(y);disp(['对照最大值',num2str(Max1),'。']);
+Min1=min(y);disp(['对照最小值',num2str(Min1),'。']);
+##### SOURCE END #####
+--></body></html>

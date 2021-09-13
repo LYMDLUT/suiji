@@ -1,0 +1,9 @@
+实验一代码说明
+
+unifScript.m  	均匀分布随机数生成程序入口，其中调用 randuniform.m
+normScript.m 	高斯分布随机数生成程序入口，其中调用 rnd1.m  或者 rnd2.m  两种方法之一
+expScript.m  	指数分布随机数生成程序入口
+xcorrScript.m 	相关分析入口
+tdeScript.m   	延时估计入口
+实验一代码说明.txt  本文档     
+           

@@ -1,0 +1,10 @@
+x=GaussRandomNumbers_3(10000,1,2);
+y=GaussRandomNumbers_3(10000,3,4);
+a=xcorr(x);
+figure(1),subplot(2,2,1),plot(a),title("x自相关函数");
+b=xcorr(y);
+figure(1),subplot(2,2,2),plot(b),title("y自相关函数");
+c=xcorr(x,y);
+figure(1),subplot(2,2,3),plot(c),title("xy互相关函数");
+d=xcorr(y,x);
+figure(1),subplot(2,2,4),plot(d),title("yx互相关函数");

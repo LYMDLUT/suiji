@@ -1,0 +1,191 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>task2_2</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-11-17"><meta name="DC.source" content="task2_2.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>task2_2</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">&#37197;&#32622;&#29615;&#22659;</a></li><li><a href="#2">&#29983;&#25104;&#38543;&#26426;&#20449;&#21495;</a></li><li><a href="#3">&#38388;&#25509;&#27861;&#35889;&#20272;&#35745;</a></li><li><a href="#4">&#20869;&#32622;&#20989;&#25968;psd</a></li><li><a href="#5">&#20869;&#32622;&#20989;&#25968;pwelch</a></li><li><a href="#6">&#27604;&#36739;&#19977;&#32773;&#30340;&#35823;&#24046;</a></li></ul></div><h2>&#37197;&#32622;&#29615;&#22659;<a name="1"></a></h2><pre class="codeinput">clear <span class="string">all</span>;
+close <span class="string">all</span>;
+clc;
+</pre><h2>&#29983;&#25104;&#38543;&#26426;&#20449;&#21495;<a name="2"></a></h2><pre class="codeinput"><span class="comment">%&#20004;&#20010;&#24102;&#38543;&#26426;&#30456;&#20301;&#30340;&#21333;&#35889;&#20449;&#21495;&#19982;&#30333;&#22122;&#22768;&#20043;&#21644;</span>
+N=1024;fs=1000;                             <span class="comment">%&#24207;&#21015;&#38271;&#24230;&#21644;&#37319;&#26679;&#39057;&#29575;</span>
+t=(0:N-1)/fs;                               <span class="comment">%&#26102;&#38388;&#24207;&#21015;</span>
+fai=random(<span class="string">'unif'</span>,0,2*pi,1,2);           <span class="comment">%&#20135;&#29983;2&#20010;[0&#65292;2pi]&#20869;&#22343;&#21248;&#38543;&#26426;&#25968;</span>
+xn=cos(2*pi*30*t+fai(1))+3*cos(2*pi*100*t+fai(2))+randn(1,N);  <span class="comment">%&#20135;&#29983;&#21547;&#22122;&#22768;&#30340;&#38543;&#26426;&#24207;&#21015;</span>
+figure,plot(xn);
+title(<span class="string">'&#38543;&#26426;&#20449;&#21495;&#26102;&#22495;&#27874;&#24418;'</span>)
+</pre><img vspace="5" hspace="5" src="task2_2_01.png" style="width:560px;height:420px;" alt=""> <h2>&#38388;&#25509;&#27861;&#35889;&#20272;&#35745;<a name="3"></a></h2><pre class="codeinput">Rxx=xcorr(xn,<span class="string">'biased'</span>);                     <span class="comment">%&#20272;&#35745;&#33258;&#30456;&#20851;&#20989;&#25968;Rxx</span>
+Sx1=abs(fft(Rxx));                          <span class="comment">%&#23545;Rxx&#36827;&#34892;FFT&#24471;&#21040;&#21151;&#29575;&#35889;</span>
+f=(0:N-1)*fs/N/2;                           <span class="comment">%&#39057;&#29575;&#36724;&#22352;&#26631;</span>
+figure(1);
+plot(f,10*log10(Sx1(1:N)));grid <span class="string">on</span>;          <span class="comment">%&#29992;dB/Hz&#20570;&#21151;&#29575;&#35889;&#21333;&#20301;&#65292;&#30011;&#22270;</span>
+xlabel(<span class="string">'f(Hz)'</span>);
+ylabel(<span class="string">'Sx(f)(dB/Hz)'</span>);
+title(<span class="string">'&#33258;&#30456;&#20851;&#20989;&#25968;&#27861;&#20272;&#35745;&#21151;&#29575;&#35889;'</span>);
+</pre><img vspace="5" hspace="5" src="task2_2_02.png" style="width:560px;height:420px;" alt=""> <h2>&#20869;&#32622;&#20989;&#25968;psd<a name="4"></a></h2><pre class="codeinput">Nseg=256;                                   <span class="comment">%&#20998;&#27573;&#38388;&#38548;&#20026;256</span>
+window=hanning(Nseg);                       <span class="comment">%&#27721;&#23425;&#31383;</span>
+noverlap=Nseg/2;                            <span class="comment">%&#37325;&#21472;&#28857;&#25968;&#20026;128</span>
+f=(0:Nseg/2)*fs/Nseg;                       <span class="comment">%&#39057;&#29575;&#36724;&#22352;&#26631;</span>
+Sx2=psd(xn,Nseg,fs,window,noverlap,<span class="string">'none'</span>);  <span class="comment">%psd&#20989;&#25968;&#20272;&#35745;&#21151;&#29575;&#35889;</span>
+figure(2);
+plot(f,10*log10(Sx2));grid <span class="string">on</span>;
+xlabel(<span class="string">'f(Hz)'</span>);
+ylabel(<span class="string">'Sx(f)(dB/Hz)'</span>);
+title(<span class="string">'Bartlett&#27861;&#20272;&#35745;&#21151;&#29575;&#35889;'</span>);
+</pre><pre class="codeoutput">&#35686;&#21578;: PSD has been replaced by SPECTRUM objects. PSD still works but may
+be removed in the future. Use SPECTRUM (or its functional form PWELCH)
+instead. 
+</pre><img vspace="5" hspace="5" src="task2_2_03.png" style="width:560px;height:420px;" alt=""> <h2>&#20869;&#32622;&#20989;&#25968;pwelch<a name="5"></a></h2><pre class="codeinput">Sx3=pwelch(xn,window,128,Nseg,fs,<span class="string">'onesided'</span>)*fs/2;
+figure(3);                                  <span class="comment">%Welch&#20989;&#25968;&#20272;&#35745;&#21151;&#29575;&#35889;</span>
+plot(f,10*log10(Sx3));grid <span class="string">on</span>;
+xlabel(<span class="string">'f(Hz)'</span>);
+ylabel(<span class="string">'Sx(f)(dB/Hz)'</span>);
+title(<span class="string">'Welch&#27861;&#20272;&#35745;&#21151;&#29575;&#35889;'</span>);
+</pre><img vspace="5" hspace="5" src="task2_2_04.png" style="width:560px;height:420px;" alt=""> <h2>&#27604;&#36739;&#19977;&#32773;&#30340;&#35823;&#24046;<a name="6"></a></h2><p>Sx1:1*2047,Sx2:129*1,Sx3:129*1</p><pre class="codeinput">Sx11=Sx1';
+err1=Sx11(1:16:N*2-1)-Sx2(1:N/8);
+ff=f(1:length(f)-1);
+figure;subplot(311);plot(ff,10*log10(err1));
+xlabel(<span class="string">'f(Hz)'</span>);
+ylabel(<span class="string">'Sx1(f)-Sx2(f) (dB/Hz)'</span>);
+title(<span class="string">'&#38388;&#25509;&#27861;&#35889;&#20272;&#35745;&#19982;psd&#20989;&#25968;&#20272;&#35745;&#30340;&#35823;&#24046;'</span>);
+err2=Sx11(1:16:N*2-1)-Sx3(1:N/8);
+subplot(312);plot(ff,10*log10(err2));
+xlabel(<span class="string">'f(Hz)'</span>);
+ylabel(<span class="string">'Sx1(f)-Sx3(f) (dB/Hz)'</span>);
+title(<span class="string">'&#38388;&#25509;&#27861;&#35889;&#20272;&#35745;&#19982;pwelch&#20989;&#25968;&#20272;&#35745;&#30340;&#35823;&#24046;'</span>);
+err3=Sx2-Sx3;
+subplot(313);plot(f,10*log10(err3));
+xlabel(<span class="string">'f(Hz)'</span>);
+ylabel(<span class="string">'Sx2(f)-Sx3(f) (dB/Hz)'</span>);
+title(<span class="string">'psd&#20989;&#25968;&#20272;&#35745;&#19982;pwelch&#20989;&#25968;&#20272;&#35745;&#30340;&#35823;&#24046;'</span>);
+</pre><pre class="codeoutput">&#35686;&#21578;: &#22797;&#25968; X &#21644;/&#25110; Y &#21442;&#25968;&#30340;&#34394;&#37096;&#24050;&#24573;&#30053; 
+&#35686;&#21578;: &#22797;&#25968; X &#21644;/&#25110; Y &#21442;&#25968;&#30340;&#34394;&#37096;&#24050;&#24573;&#30053; 
+&#35686;&#21578;: &#22797;&#25968; X &#21644;/&#25110; Y &#21442;&#25968;&#30340;&#34394;&#37096;&#24050;&#24573;&#30053; 
+</pre><img vspace="5" hspace="5" src="task2_2_05.png" style="width:560px;height:420px;" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% task2_2
+%% 配置环境
+clear all;
+close all;
+clc;
+%% 生成随机信号
+%两个带随机相位的单谱信号与白噪声之和
+N=1024;fs=1000;                             %序列长度和采样频率
+t=(0:N-1)/fs;                               %时间序列
+fai=random('unif',0,2*pi,1,2);           %产生2个[0，2pi]内均匀随机数
+xn=cos(2*pi*30*t+fai(1))+3*cos(2*pi*100*t+fai(2))+randn(1,N);  %产生含噪声的随机序列
+figure,plot(xn);
+title('随机信号时域波形')
+
+%% 间接法谱估计
+Rxx=xcorr(xn,'biased');                     %估计自相关函数Rxx
+Sx1=abs(fft(Rxx));                          %对Rxx进行FFT得到功率谱
+f=(0:N-1)*fs/N/2;                           %频率轴坐标
+figure(1);
+plot(f,10*log10(Sx1(1:N)));grid on;          %用dB/Hz做功率谱单位，画图
+xlabel('f(Hz)');
+ylabel('Sx(f)(dB/Hz)');
+title('自相关函数法估计功率谱');
+
+%% 内置函数psd
+Nseg=256;                                   %分段间隔为256
+window=hanning(Nseg);                       %汉宁窗
+noverlap=Nseg/2;                            %重叠点数为128
+f=(0:Nseg/2)*fs/Nseg;                       %频率轴坐标
+Sx2=psd(xn,Nseg,fs,window,noverlap,'none');  %psd函数估计功率谱
+figure(2);
+plot(f,10*log10(Sx2));grid on;
+xlabel('f(Hz)');
+ylabel('Sx(f)(dB/Hz)');
+title('Bartlett法估计功率谱');
+%% 内置函数pwelch
+Sx3=pwelch(xn,window,128,Nseg,fs,'onesided')*fs/2;
+figure(3);                                  %Welch函数估计功率谱
+plot(f,10*log10(Sx3));grid on;
+xlabel('f(Hz)');
+ylabel('Sx(f)(dB/Hz)');
+title('Welch法估计功率谱');
+
+%% 比较三者的误差
+% Sx1:1*2047,Sx2:129*1,Sx3:129*1
+Sx11=Sx1';
+err1=Sx11(1:16:N*2-1)-Sx2(1:N/8);
+ff=f(1:length(f)-1);
+figure;subplot(311);plot(ff,10*log10(err1));
+xlabel('f(Hz)');
+ylabel('Sx1(f)-Sx2(f) (dB/Hz)');
+title('间接法谱估计与psd函数估计的误差');
+err2=Sx11(1:16:N*2-1)-Sx3(1:N/8);
+subplot(312);plot(ff,10*log10(err2));
+xlabel('f(Hz)');
+ylabel('Sx1(f)-Sx3(f) (dB/Hz)');
+title('间接法谱估计与pwelch函数估计的误差');
+err3=Sx2-Sx3;
+subplot(313);plot(f,10*log10(err3));
+xlabel('f(Hz)');
+ylabel('Sx2(f)-Sx3(f) (dB/Hz)');
+title('psd函数估计与pwelch函数估计的误差');
+##### SOURCE END #####
+--></body></html>

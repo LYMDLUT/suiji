@@ -1,0 +1,229 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>task1_4</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-10-27"><meta name="DC.source" content="Untitled4.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>task1_4</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">&#20934;&#22791;&#29615;&#22659;</a></li><li><a href="#2">&#35835;&#21462;&#25968;&#25454;</a></li><li><a href="#3">&#21028;&#26029;&#24310;&#36831;</a></li><li><a href="#4">&#36827;&#34892;&#21442;&#25968;&#35745;&#31639;</a></li><li><a href="#5">&#21644;&#39044;&#35774;&#20540;&#23545;&#27604;</a></li><li><a href="#7">&#20351;&#29992;&#20613;&#37324;&#21494;&#21464;&#25442;&#26469;&#21028;&#26029;&#39640;&#26031;&#20998;&#24067;(1)</a></li><li><a href="#8">&#20351;&#29992;&#20613;&#37324;&#21494;&#21464;&#25442;&#26469;&#21028;&#26029;&#39640;&#26031;&#20998;&#24067;(2)</a></li><li><a href="#9">&#20351;&#29992;&#20551;&#35774;&#26816;&#39564;&#39564;&#35777;&#22122;&#22768;&#30340;&#20998;&#24067;</a></li><li><a href="#10">&#20351;&#29992;&#27169;&#22359;&#21270;&#20551;&#35774;&#26816;&#39564;&#39564;&#35777;&#22122;&#22768;&#30340;&#20998;&#24067;</a></li></ul></div><h2>&#20934;&#22791;&#29615;&#22659;<a name="1"></a></h2><pre class="codeinput">clear <span class="string">all</span>;
+close <span class="string">all</span>;
+clc;
+</pre><h2>&#35835;&#21462;&#25968;&#25454;<a name="2"></a></h2><pre class="codeinput">[filename1,filepath1]=uigetfile(<span class="string">'.wav'</span>);
+audeofile1= strcat(filepath1,filename1);
+[y1,Fs1] = audioread(audeofile1);
+[filename2,filepath2]=uigetfile(<span class="string">'.wav'</span>);
+audeofile2= strcat(filepath2,filename2);
+[y2,Fs2] = audioread(audeofile2);
+num=length(y1);
+disp([<span class="string">'&#22768;&#38899;&#20449;&#21495;&#39057;&#29575;'</span>,num2str(Fs1),<span class="string">'Hz&#12290;'</span>]);
+</pre><pre class="codeoutput">&#22768;&#38899;&#20449;&#21495;&#39057;&#29575;8192Hz&#12290;
+</pre><h2>&#21028;&#26029;&#24310;&#36831;<a name="3"></a></h2><pre class="codeinput">[x,lags]=xcorr(y1,y2,<span class="string">'coeff'</span>);
+figure;plot(lags,x)
+title(<span class="string">'&#20004;&#36335;&#21516;&#28304;&#20449;&#21495;&#30340;&#20114;&#30456;&#20851;&#65292;&#23792;&#20540;&#22788;&#26368;&#30456;&#20851;'</span>);
+[mx,indx] = max(x);
+TLag = abs(num - indx);
+disp([<span class="string">'&#32463;&#35745;&#31639;&#30456;&#20851;&#20989;&#25968;&#65292;&#20272;&#35745;&#24310;&#36831;&#28857;&#25968;&#20026;&#65306;'</span>,num2str(TLag),<span class="string">'&#12290;'</span>])
+TsLag=TLag/Fs1*1000;
+disp([<span class="string">'&#20272;&#35745;&#24310;&#36831;&#26102;&#38388;&#20026;&#65306;'</span>,num2str(TsLag),<span class="string">'ms&#12290;'</span>])
+</pre><pre class="codeoutput">&#32463;&#35745;&#31639;&#30456;&#20851;&#20989;&#25968;&#65292;&#20272;&#35745;&#24310;&#36831;&#28857;&#25968;&#20026;&#65306;12000&#12290;
+&#20272;&#35745;&#24310;&#36831;&#26102;&#38388;&#20026;&#65306;1464.8438ms&#12290;
+</pre><img vspace="5" hspace="5" src="Untitled4_01.png" style="width:560px;height:420px;" alt=""> <h2>&#36827;&#34892;&#21442;&#25968;&#35745;&#31639;<a name="4"></a></h2><pre class="codeinput">noise=y2(1:TLag);
+m = zeros(1,4);        <span class="comment">%&#29983;&#25104;[0 0 0 0]</span>
+<span class="keyword">for</span> i = 1 : TLag
+    m(1) = m(1) + noise(i);    <span class="comment">% &#22343;&#20540;</span>
+    m(2) = m(2) + noise(i)^2;  <span class="comment">% &#20108;&#38454;&#30697;</span>
+    m(3) = m(3) + noise(i)^3;  <span class="comment">%&#19977;&#38454;</span>
+    m(4) = m(4) + noise(i)^4;  <span class="comment">%&#22235;&#38454;</span>
+<span class="keyword">end</span>
+m=m/TLag;
+disp([<span class="string">'&#29983;&#25104;&#25968;&#25454;&#30340;&#25968;&#23383;&#29305;&#24449;'</span>])
+disp([<span class="string">'&#22343;&#20540; = '</span>,num2str(m(1))] );
+disp([<span class="string">'&#22343;&#26041;&#20540; = '</span>,num2str(m(2))] );
+disp([<span class="string">'&#19977;&#38454;&#21407;&#28857;&#30697; = '</span>,num2str(m(3))] );
+disp([<span class="string">'&#22235;&#38454;&#21407;&#28857;&#30697; = '</span>,num2str(m(4))] );
+meanValue=mean(noise);
+stdValue=std(noise);
+disp([<span class="string">'&#26041;&#24046; = '</span>,num2str(stdValue^2)] );
+</pre><pre class="codeoutput">&#29983;&#25104;&#25968;&#25454;&#30340;&#25968;&#23383;&#29305;&#24449;
+&#22343;&#20540; = 0.0032869
+&#22343;&#26041;&#20540; = 0.1093
+&#19977;&#38454;&#21407;&#28857;&#30697; = -0.00026162
+&#22235;&#38454;&#21407;&#28857;&#30697; = 0.035162
+&#26041;&#24046; = 0.1093
+</pre><h2>&#21644;&#39044;&#35774;&#20540;&#23545;&#27604;<a name="5"></a></h2><pre class="codeinput">disp([<span class="string">'&#39044;&#35774;&#21442;&#25968;&#65292;&#22343;&#20540;&#20026;&#65306;'</span>,num2str(0),<span class="string">',&#26041;&#24046;&#20026;&#65306;'</span>,num2str(0.11)]);
+meanErr=meanValue;
+stdErr  = (stdValue^2 - 0.11)/(0.11)*100;
+disp([<span class="string">'&#22343;&#20540;&#32477;&#23545;&#35823;&#24046;&#20026;&#65306;'</span>,num2str(meanErr),<span class="string">' &#26041;&#24046;&#30456;&#23545;&#35823;&#24046;&#20026;&#65306;'</span>,num2str(stdErr),<span class="string">' %'</span>])
+[f,xi]=ksdensity(noise);
+figure,subplot(3,1,1),plot(xi,f);
+title(<span class="string">'&#21033;&#29992;MATLAB&#20989;&#25968;ksdensity&#20272;&#35745;&#30340;&#27010;&#29575;&#23494;&#24230;'</span>);
+</pre><pre class="codeoutput">&#39044;&#35774;&#21442;&#25968;&#65292;&#22343;&#20540;&#20026;&#65306;0,&#26041;&#24046;&#20026;&#65306;0.11
+&#22343;&#20540;&#32477;&#23545;&#35823;&#24046;&#20026;&#65306;0.0032869 &#26041;&#24046;&#30456;&#23545;&#35823;&#24046;&#20026;&#65306;-0.63765 %
+</pre><img vspace="5" hspace="5" src="Untitled4_02.png" style="width:560px;height:420px;" alt=""> <pre class="codeinput">t=-3:1/1000:3;
+y=1/sqrt(2*pi*0.1)*exp((-5)*t.^2);
+[f,xi]=ksdensity(noise);
+subplot(3,1,2),plot(xi,f);
+title(<span class="string">'&#39044;&#35774;&#21442;&#25968;&#20026;0.11&#30340;&#39640;&#26031;&#20998;&#24067;&#29702;&#35770;&#27010;&#29575;&#22270;'</span>);
+suptitle(<span class="string">'&#20272;&#35745;&#25968;&#25454;&#27010;&#29575;&#22270;&#19982;&#29702;&#35770;&#27010;&#29575;&#27604;&#36739;'</span>);
+</pre><img vspace="5" hspace="5" src="Untitled4_03.png" style="width:560px;height:420px;" alt=""> <h2>&#20351;&#29992;&#20613;&#37324;&#21494;&#21464;&#25442;&#26469;&#21028;&#26029;&#39640;&#26031;&#20998;&#24067;(1)<a name="7"></a></h2><p>Fs3=Fs1; f=fft(noise); a=abs(f/TLag); p1=a(1:TLag/2+1); p1(2:end-1)=2*p1(2:end-1); f1=Fs3*(0:(TLag/2))/TLag; subplot(3,1,3),plot(f1,p1);</p><h2>&#20351;&#29992;&#20613;&#37324;&#21494;&#21464;&#25442;&#26469;&#21028;&#26029;&#39640;&#26031;&#20998;&#24067;(2)<a name="8"></a></h2><pre class="codeinput">fs=Fs1;
+N=2*Fs1;
+n=0:N-1;
+x=fft(noise,N);
+m=abs(x);
+n=-N/2:N/2-1;
+f=n*fs/N;
+subplot(3,1,3),plot(f,m);
+</pre><img vspace="5" hspace="5" src="Untitled4_04.png" style="width:560px;height:420px;" alt=""> <h2>&#20351;&#29992;&#20551;&#35774;&#26816;&#39564;&#39564;&#35777;&#22122;&#22768;&#30340;&#20998;&#24067;<a name="9"></a></h2><p>A=noise; alpha=0.05; [mu,sigma]=normfit(A); p1=normcdf(A,mu,sigma); [H1,s1]=kstest(A,[A,p1],alpha); if H1==0     disp('&#35813;&#25968;&#25454;&#26381;&#20174;&#27491;&#24577;&#20998;&#24067;&#12290;') else     disp('&#35813;&#25968;&#25454;&#19981;&#26381;&#20174;&#27491;&#24577;&#20998;&#24067;&#12290;') end</p><h2>&#20351;&#29992;&#27169;&#22359;&#21270;&#20551;&#35774;&#26816;&#39564;&#39564;&#35777;&#22122;&#22768;&#30340;&#20998;&#24067;<a name="10"></a></h2><pre class="codeinput">p_judge(noise,0.05);
+</pre><pre class="codeoutput">&#35813;&#25968;&#25454;&#28304;&#26381;&#20174;&#27491;&#24577;&#20998;&#24067;&#12290;
+</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% task1_4
+%% 准备环境
+clear all;
+close all;
+clc;
+%% 读取数据
+[filename1,filepath1]=uigetfile('.wav');
+audeofile1= strcat(filepath1,filename1); 
+[y1,Fs1] = audioread(audeofile1);
+[filename2,filepath2]=uigetfile('.wav');
+audeofile2= strcat(filepath2,filename2); 
+[y2,Fs2] = audioread(audeofile2);
+num=length(y1);
+disp(['声音信号频率',num2str(Fs1),'Hz。']);
+%% 判断延迟
+[x,lags]=xcorr(y1,y2,'coeff');
+figure;plot(lags,x)
+title('两路同源信号的互相关，峰值处最相关');
+[mx,indx] = max(x);
+TLag = abs(num - indx);
+disp(['经计算相关函数，估计延迟点数为：',num2str(TLag),'。'])
+TsLag=TLag/Fs1*1000;
+disp(['估计延迟时间为：',num2str(TsLag),'ms。'])
+%% 进行参数计算
+noise=y2(1:TLag);
+m = zeros(1,4);        %生成[0 0 0 0]
+for i = 1 : TLag
+    m(1) = m(1) + noise(i);    % 均值
+    m(2) = m(2) + noise(i)^2;  % 二阶矩
+    m(3) = m(3) + noise(i)^3;  %三阶
+    m(4) = m(4) + noise(i)^4;  %四阶
+end
+m=m/TLag;
+disp(['生成数据的数字特征'])
+disp(['均值 = ',num2str(m(1))] );
+disp(['均方值 = ',num2str(m(2))] );
+disp(['三阶原点矩 = ',num2str(m(3))] );
+disp(['四阶原点矩 = ',num2str(m(4))] );
+meanValue=mean(noise);
+stdValue=std(noise);
+disp(['方差 = ',num2str(stdValue^2)] );
+%% 和预设值对比
+disp(['预设参数，均值为：',num2str(0),',方差为：',num2str(0.11)]);
+meanErr=meanValue;
+stdErr  = (stdValue^2 - 0.11)/(0.11)*100;
+disp(['均值绝对误差为：',num2str(meanErr),' 方差相对误差为：',num2str(stdErr),' %'])
+[f,xi]=ksdensity(noise);
+figure,subplot(3,1,1),plot(xi,f);
+title('利用MATLAB函数ksdensity估计的概率密度');
+%%
+t=-3:1/1000:3;
+y=1/sqrt(2*pi*0.1)*exp((-5)*t.^2);
+[f,xi]=ksdensity(noise);
+subplot(3,1,2),plot(xi,f);
+title('预设参数为0.11的高斯分布理论概率图');
+suptitle('估计数据概率图与理论概率比较');
+%% 使用傅里叶变换来判断高斯分布(1)
+% Fs3=Fs1;
+% f=fft(noise);
+% a=abs(f/TLag);
+% p1=a(1:TLag/2+1);
+% p1(2:end-1)=2*p1(2:end-1);
+% f1=Fs3*(0:(TLag/2))/TLag;
+% subplot(3,1,3),plot(f1,p1);
+%% 使用傅里叶变换来判断高斯分布(2)
+fs=Fs1;
+N=2*Fs1;
+n=0:N-1;
+x=fft(noise,N);
+m=abs(x);
+n=-N/2:N/2-1;
+f=n*fs/N;
+subplot(3,1,3),plot(f,m);
+%% 使用假设检验验证噪声的分布
+% A=noise;
+% alpha=0.05;
+% [mu,sigma]=normfit(A);
+% p1=normcdf(A,mu,sigma);
+% [H1,s1]=kstest(A,[A,p1],alpha);
+% if H1==0
+%     disp('该数据服从正态分布。')
+% else
+%     disp('该数据不服从正态分布。')
+% end
+%% 使用模块化假设检验验证噪声的分布
+p_judge(noise,0.05);
+
+##### SOURCE END #####
+--></body></html>
